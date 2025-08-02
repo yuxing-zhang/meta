@@ -29,6 +29,6 @@ template<std::size_t N>
 using fibonacci = typename Fib<N, 1, 0>::type;
 
 int main() {
-    []<std::size_t ...N>(IS<N...>) { ((std::cout << N << ' '), ...); } (
+    []<std::size_t ...N>(IS<N...>) { ((std::cout << N << ' '), ...); }(
             fibonacci<100>{}); 
 }
