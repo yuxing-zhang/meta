@@ -39,5 +39,8 @@ constexpr bool is_same<T, T> = true;
 
 static_assert(is_same<compose<add_pointer, add_const>::of<int>, const int*>);
 static_assert(is_same<compose<add_const, add_pointer>::of<int>, int* const>);
+static_assert(is_same<compose<add_const,
+                              compose<add_pointer, add_const>::of>::of<int>,
+                      const int* const>);
 static_assert(is_same<iterate<add_pointer, 0>::of<int>, int>);
 static_assert(is_same<iterate<add_pointer, 3>::of<int>, int***>);
